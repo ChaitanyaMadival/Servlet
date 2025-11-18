@@ -1,4 +1,4 @@
-package com.xworkz.myinfo;
+package com.xworkz.formsapp.postmethod;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
@@ -7,18 +7,21 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/personal", loadOnStartup = 1)
-
-public class PersonalDetailsServlet extends GenericServlet {
-    public  PersonalDetailsServlet(){
-        System.out.println("Created Personal Details servlet");
+@WebServlet(urlPatterns = "/patient", loadOnStartup = 1)
+public class PatientServlet extends GenericServlet {
+    public PatientServlet()
+    {
+        System.out.println("Created patient servlet..");
     }
+
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
 
-        System.out.println("Executed PersonalDetails ServletMethod............");
+        System.out.println("Running Patient service ..");
 
-        System.out.println("----Personal Details-----");
+        String patientId = servletRequest.getParameter("patientId");
+        System.out.println("Patient Id : "+ patientId);
+
         String firstName= servletRequest.getParameter("firstName");
         System.out.println("FirstName:"+firstName);
 
@@ -42,6 +45,9 @@ public class PersonalDetailsServlet extends GenericServlet {
 
         String dob= servletRequest.getParameter("dob");
         System.out.println("Date of Birth:"+dob);
+
+        String disease = servletRequest.getParameter("disease");
+        System.out.println("Disease : "+ disease);
 
         String status= servletRequest.getParameter("status");
         System.out.println("Status:"+status);
