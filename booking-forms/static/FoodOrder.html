@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Order</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+
+    <link href = "Style/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Food Order Information</h2>
+    <form action="food" method="post">
+
+        <div class="mb-3">
+            <label for="userId" class="form-label">Order Id</label>
+            <input type="text" class="form-control" id="userId" name="orderId" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="userName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="userName" name="customerName" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="bloodType" class="form-label">Food Type</label>
+            <select class="form-select" id="bloodType" name="foodType" required>
+                <option value="">Select Food Type</option>
+                <option value="blood">Veg</option>
+                <option value="blood">Non-Veg</option>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="comment" class="form-label">Comment</label>
+            <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Delivery Method</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="small" name="deliveryMethod" value="pending">
+                <label class="form-check-label" for="small">Home Delivery</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="completed" name="deliveryMethod" value="completed">
+                <label class="form-check-label" for="completed">Pickup</label>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
